@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/3DPong/!svn/ver/240/FlowLiveWallpaper/src/pong/flow
+END
+EGLConfigChooser.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/3DPong/!svn/ver/169/FlowLiveWallpaper/src/pong/flow/EGLConfigChooser.java
+END
+FlowLiveWallpaperService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/3DPong/!svn/ver/244/FlowLiveWallpaper/src/pong/flow/FlowLiveWallpaperService.java
+END
+PhotoBarPrefWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/3DPong/!svn/ver/204/FlowLiveWallpaper/src/pong/flow/PhotoBarPrefWidget.java
+END
+Camera.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/3DPong/!svn/ver/169/FlowLiveWallpaper/src/pong/flow/Camera.java
+END
+EGLContextFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/3DPong/!svn/ver/169/FlowLiveWallpaper/src/pong/flow/EGLContextFactory.java
+END
+FlowEnvironment.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/3DPong/!svn/ver/169/FlowLiveWallpaper/src/pong/flow/FlowEnvironment.java
+END
+Shader.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/3DPong/!svn/ver/169/FlowLiveWallpaper/src/pong/flow/Shader.java
+END
+FlowInteraction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/3DPong/!svn/ver/234/FlowLiveWallpaper/src/pong/flow/FlowInteraction.java
+END
+FlowSurface.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/3DPong/!svn/ver/243/FlowLiveWallpaper/src/pong/flow/FlowSurface.java
+END
+Vec3.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/3DPong/!svn/ver/169/FlowLiveWallpaper/src/pong/flow/Vec3.java
+END
+PhotoBarPreference.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/3DPong/!svn/ver/240/FlowLiveWallpaper/src/pong/flow/PhotoBarPreference.java
+END
+FlowTheme.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/3DPong/!svn/ver/242/FlowLiveWallpaper/src/pong/flow/FlowTheme.java
+END
+LiveWallpaperSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/3DPong/!svn/ver/243/FlowLiveWallpaper/src/pong/flow/LiveWallpaperSettings.java
+END
+GLWallpaperService.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/3DPong/!svn/ver/169/FlowLiveWallpaper/src/pong/flow/GLWallpaperService.java
+END
+SeekBarPreference.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/3DPong/!svn/ver/245/FlowLiveWallpaper/src/pong/flow/SeekBarPreference.java
+END
+FlowRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/3DPong/!svn/ver/236/FlowLiveWallpaper/src/pong/flow/FlowRenderer.java
+END

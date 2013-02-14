@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- General -->
+    <skip />
+    <!-- Application name -->
+    <string name="wallpaper_name">Flow Live Wallpaper</string>
+    <string name="wallpaper_description">Liquid flows through currents across the screen. Touch to change the flow.</string>
+    <string name="normals">Normals</string>
+    <string name="settings">Settings</string>
+    <string name="choose_theme_title">Choose Theme: </string>
+    <string name="choose_background_title">Custom Background: </string>
+    
+    
+    <string name="enable_input_title">Enable Touch Input</string>
+    <string name="enable_input_summary">Disabling will improve performance </string>
+    
+    
+     <string name="advanced_settings_title">Advanced Settings</string>
+    <string name="advanced_settings_summary">Ultimate customization for the phone snob.</string>
+    
+    <string name="sun_color_title">Sun Color</string>
+    <string name="sun_color_summary">Change the color of the light source. Select a color close to white for the best effect.</string>
+    
+    <string name="water_color_title">Water Color</string>
+    <string name="water_color_summary">Change the base water color.</string>
+    
+    <string name="input_dis_title">Input Dissipation Rate</string>
+    <string name="input_dis_summary">Change how long it takes touch input to dissipate into background</string>
+    
+     <string name="flow_speed_title">Flow Speed</string>
+    <string name="flow_speed_summary">Adjust the liquid flow speed</string>
+    
+     <string name="flow_dis_title">Flow Distortion</string>
+    <string name="flow_dis_summary">Adjust background image distortion</string>
+    
+      <string name="flow_wave_title">Flow Wave Intensity</string>
+    <string name="flow_wave_summary">Adjust wave intensity</string>
+    
+    
+     <string name="brush_size_title">Input Stroke Size</string>
+    <string name="brush_size_summary">Adjust input stroke size</string>
+    
+    <string name="enable_clock_title">Enable Clock Sync</string>
+    <string name="enable_clock_summary">Light source will rotate in hour hand position</string>
+    
+    <string name="website_title">Visit Our Website</string>
+    
+    
+</resources>

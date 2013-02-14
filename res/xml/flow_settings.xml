@@ -1,0 +1,81 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/pong.flow"
+        android:title="Settings"
+        android:key="flowLiveWallpaperService_settings">
+
+    <pong.flow.PhotoBarPreference
+        android:key="theme_preference"
+        custom:photobar_loadFromGallery="false"
+        custom:photobar_title="@string/choose_theme_title" />
+    <pong.flow.PhotoBarPreference
+        android:key="background_photo_preference"
+        custom:photobar_loadFromGallery="true"
+        custom:photobar_title="@string/choose_background_title" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="flow_enable_input"
+        android:summary="@string/enable_input_summary"
+        android:title="@string/enable_input_title"
+        android:layout="@layout/custom_preferece_layout"
+         />
+    <pong.flow.TogglePreference
+        android:key="advanced_preference_title"
+        android:summary="@string/advanced_settings_summary"
+        android:title="@string/advanced_settings_title"
+        android:layout="@layout/custom_preferece_layout_expand" />
+    
+    <PreferenceCategory android:key="advanced_preference_key" >
+        <yuku.ambilwarna.widget.AmbilWarnaPreference
+            android:key="water_color_preference"
+            android:summary="@string/water_color_summary"
+            android:title="@string/water_color_title" 
+            android:layout="@layout/custom_preferece_layout"
+             />
+        <yuku.ambilwarna.widget.AmbilWarnaPreference
+            android:key="sun_color_preference"
+            android:summary="@string/sun_color_summary"
+            android:title="@string/sun_color_title" 
+            android:layout="@layout/custom_preferece_layout"
+            />
+        <pong.flow.SeekBarPreference
+            android:defaultValue="25"
+            android:key="input_dis_preference"
+            android:summary="@string/input_dis_summary"
+            android:title="@string/input_dis_title" />
+        <pong.flow.SeekBarPreference
+            android:defaultValue="50"
+            android:key="flow_speed_preference"
+            android:summary="@string/flow_speed_summary" 
+            android:title="@string/flow_speed_title" />
+        <pong.flow.SeekBarPreference
+            android:defaultValue="50"
+            android:key="flow_distortion_preference"
+            android:summary="@string/flow_dis_summary"
+            android:title="@string/flow_dis_title" />
+        <pong.flow.SeekBarPreference
+            android:defaultValue="50"
+            android:key="flow_wave_preference"
+            android:summary="@string/flow_wave_summary"
+            android:title="@string/flow_wave_title"/>
+        <pong.flow.SeekBarPreference
+            android:defaultValue="50"
+            android:key="brushstroke_preference"
+             android:summary="@string/brush_size_summary"
+            android:title="@string/brush_size_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="flow_enable_clock"
+             android:summary="@string/enable_clock_summary"
+            android:title="@string/enable_clock_title"
+            android:layout="@layout/custom_preferece_layout"/>
+    </PreferenceCategory>
+    
+     <PreferenceScreen 
+         android:title="@string/website_title"
+         android:layout="@layout/custom_preferece_layout">
+    <intent
+        android:action="android.intent.action.VIEW"
+        android:data="http://Fireswingstudios.com"
+        />
+</PreferenceScreen>
+</PreferenceScreen>

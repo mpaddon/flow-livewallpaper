@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pong.flow" 
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="10" 
+        android:targetSdkVersion="10"/>
+    
+
+    <uses-feature android:name="android.software.live_wallpaper" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+    
+    <supports-screens
+                  android:smallScreens="true"
+                  android:normalScreens= "true"
+                  android:largeScreens="true"
+                  android:xlargeScreens="false"
+                  android:anyDensity="true" />
+
+    <application
+        android:label="@string/wallpaper_name"
+        android:icon="@drawable/logo_flow" >
+        <service
+            android:name=".FlowLiveWallpaperService"
+            android:label="@string/wallpaper_name"
+            android:permission="android.permission.BIND_WALLPAPER" >
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/flow_wallpaper" />
+        </service>
+
+        <activity
+            android:name=".LiveWallpaperSettings"
+            android:exported="true"
+            android:label="@string/settings"
+            android:theme="@android:style/Theme.WallpaperSettings" >
+        </activity>
+    </application>
+
+</manifest>

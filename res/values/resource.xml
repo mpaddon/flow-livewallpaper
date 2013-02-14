@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<resources> 
+    <declare-styleable name="Gallery1"> 
+        <attr name="android:galleryItemBackground" /> 
+    </declare-styleable> 
+    <declare-styleable name="PhotoBarPrefWidget1">
+        <attr name="photobar_title" format="string"/>
+         <attr name="photobar_loadFromGallery" format="boolean"/>
+    </declare-styleable>
+    
+
+</resources>

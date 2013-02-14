@@ -1,0 +1,67 @@
+package pong.flow;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+
+public class FlowTheme {
+
+	
+	
+	public int WaterColor;
+	public int SunColor;
+
+	
+	//textureID
+	public int diffuseTextureID;
+	public int wave1TextureID;
+	public int wave2TextureID;
+	public int flowMapID;
+	public float[] lightLocation;
+	public float noiseIntensity;
+	public float flowSpeed;
+	public float flowDistortion;
+	
+
+	
+public static Map<Long, FlowTheme> _themeTable;
+	
+    static {
+    	Map<Long, FlowTheme> aMap = new HashMap<Long, FlowTheme>();
+        aMap.put((long)3, new FlowTheme(Color.argb(255, (int)(.52156866*255), (int)(.8784314*255), (int)(.6*255)), Color.argb(255, (int)(.84313726*255), (int)(.8862745*255), (int)(.6745098*255)), R.raw.bg_jellyfish, R.raw.wave5_nrm, R.raw.wave6_nrm, R.raw.bg_jellyfish_flowmap, null, 1.0f, .30f, .20f));
+        aMap.put((long)4, new FlowTheme(Color.argb(255, (int)(.90588236*255), (int)(.878314*255), (int)(1*255)), Color.argb(255, (int)(.38431373*255), (int)(.3019608*255), (int)(.08235294*255)), R.raw.bg_sand_footprint2, R.raw.wave5_nrm, R.raw.wave6_nrm, R.raw.bg_sand_footprint2_flowmap, null, .5f, .25f, 1f));
+        aMap.put((long)5, new FlowTheme(Color.argb(255, (int)(.39607844*255), (int)(.41960785*255), (int)(.9647059*255)), Color.argb(255, (int)(1*255), (int)(.67058825*255), (int)(.003921569*255)), R.raw.bg_sunset_1, R.raw.wave5_nrm, R.raw.wave6_nrm, R.raw.bg_sunset_1_flowmap, null, 1f, .7f, .5f));
+        aMap.put((long)6, new FlowTheme(Color.argb(255, (int)(.52941188*255), (int)(.4862745*255), (int)(.80784315*255)), Color.argb(255, (int)(.9647059*255), (int)(.9647059*255), (int)(.52156866*255)), R.raw.bg_tile_spiral, R.raw.wave5_nrm, R.raw.wave6_nrm, R.raw.bg_tile_spiral_flowmap, null, .5f, .5f, .5f));
+        aMap.put((long)7, new FlowTheme(Color.argb(255, (int)(.0627451*255), (int)(.22352941*255), (int)(.32156864*255)), Color.argb(255, (int)(1*255), (int)(1*255), (int)(1*255)), R.raw.bg_tile_teal, R.raw.wave5_nrm, R.raw.wave6_nrm, R.raw.bg__tile_teal_flowmap, null, .75f,  .5f,.5f));
+        
+        
+        _themeTable  = Collections.unmodifiableMap(aMap);
+    }
+	
+	
+	
+	public FlowTheme(int waterColor, int sunColor, int diffTexture, int wavetex1, int wavetex2, int flowMap, float[] light_location, float noise_intensity, float flow_speed, float flow_distortion )
+	{
+		WaterColor = waterColor;
+		SunColor = sunColor;
+		diffuseTextureID = diffTexture;
+		wave1TextureID = wavetex1;
+		wave2TextureID = wavetex2;
+	    flowMapID = flowMap;
+	    
+	     lightLocation = light_location;
+		 noiseIntensity = noise_intensity;
+	     flowSpeed = flow_speed;
+		flowDistortion = flow_distortion;
+
+	}
+	
+	
+	
+
+}
+

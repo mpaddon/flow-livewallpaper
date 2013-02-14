@@ -1,0 +1,149 @@
+package pong.flow;
+
+
+import yuku.ambilwarna.widget.AmbilWarnaPreference;
+import android.content.Context;
+
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
+
+public class LiveWallpaperSettings extends PreferenceActivity
+   implements SharedPreferences.OnSharedPreferenceChangeListener, OnPreferenceClickListener{
+
+   private SharedPreferences _sp;
+private PhotoBarPreference _themePreference;
+PhotoBarPreference _photoPreference;
+private AmbilWarnaPreference _sunPreference;
+private AmbilWarnaPreference _waterPreference;
+private Preference _advancedSettingsPreference;
+PreferenceCategory _advancedSettingsCategory;
+//progress bar prefs
+SeekBarPreference _flowSpeedPref;
+SeekBarPreference _flowDistPref;
+SeekBarPreference _flowNoisePref;
+SeekBarPreference _touchDistPref;
+SeekBarPreference _touchStrokePref;
+
+boolean _expanded;
+@Override
+   protected void onCreate(Bundle icicle) {
+       super.onCreate(icicle);
+       getPreferenceManager().setSharedPreferencesName(
+    		   FlowLiveWallpaperService.SHARED_PREFS_NAME);
+       addPreferencesFromResource(R.xml.flow_settings);
+       _sp = getPreferenceManager().getSharedPreferences();
+       
+       _sp.registerOnSharedPreferenceChangeListener(
+               this);
+       final Context con = this;
+       
+       
+     _themePreference = (PhotoBarPreference ) getPreferenceScreen().findPreference("theme_preference");
+     _photoPreference = (PhotoBarPreference ) getPreferenceScreen().findPreference("background_photo_preference");
+     _waterPreference = (AmbilWarnaPreference) getPreferenceScreen().findPreference("water_color_preference");
+     _sunPreference = (AmbilWarnaPreference) getPreferenceScreen().findPreference("sun_color_preference");
+     _advancedSettingsPreference = (Preference) getPreferenceScreen().findPreference("advanced_preference_title");
+     _advancedSettingsCategory =(PreferenceCategory)getPreferenceScreen().findPreference("advanced_preference_key");
+     
+     //seekbars
+     _flowSpeedPref = (SeekBarPreference)getPreferenceScreen().findPreference("flow_speed_preference");
+     _flowDistPref = (SeekBarPreference)getPreferenceScreen().findPreference("flow_distortion_preference");
+     _flowNoisePref = (SeekBarPreference)getPreferenceScreen().findPreference("flow_noise_preference");;
+      _touchDistPref = (SeekBarPreference)getPreferenceScreen().findPreference("input_dis_preference");;
+     _touchStrokePref = (SeekBarPreference)getPreferenceScreen().findPreference("brushstroke_preference");;
+     
+     
+     
+     _expanded = false;
+     getPreferenceScreen().removePreference(_advancedSettingsCategory);
+     
+     _advancedSettingsPreference .setOnPreferenceClickListener(this);
+     
+     
+     
+     
+     _waterPreference.forceSetValue(_sp.getInt("water_color_preference", FlowTheme._themeTable.get((long)7).WaterColor));
+     _sunPreference.forceSetValue(_sp.getInt("sun_color_preference", FlowTheme._themeTable.get((long)7).SunColor));
+     
+   }
+
+   @Override
+   protected void onResume() {
+       super.onResume();
+   }
+
+   @Override
+   protected void onDestroy() {
+       getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(
+               this);
+       super.onDestroy();
+   }
+
+   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+           String key)
+   {
+	   
+	   //check key
+	   if(key.equals("water_color_preference"))
+	   {
+	  _waterPreference.forceSetValue(_sp.getInt("water_color_preference", FlowTheme._themeTable.get((long)7).WaterColor));
+	   }else if(key.equals("sun_color_preference"))
+	   {
+	      _sunPreference.forceSetValue(_sp.getInt("sun_color_preference", FlowTheme._themeTable.get((long)7).SunColor));
+	   }else if(key.equals("flow_speed_preference"))
+	   {
+		   int val = (int) (sharedPreferences.getFloat(key, .5f) * SeekBarPreference.MAX_VALUE);
+	      _flowSpeedPref.forceSetValue(val);
+	   }else if(key.equals("flow_distortion_preference"))
+	   {
+		   int val = (int) (sharedPreferences.getFloat(key, .5f) * SeekBarPreference.MAX_VALUE);
+		   _flowDistPref.forceSetValue(val);
+	   }else if(key.equals("flow_noise_preference"))
+	   {
+		   int val = (int) (sharedPreferences.getFloat(key, .5f) * SeekBarPreference.MAX_VALUE);
+		   _flowNoisePref.forceSetValue(val);
+	   }else if(key.equals("input_dis_preference"))
+	   {
+		   int val = (int) (sharedPreferences.getFloat(key, .5f) * SeekBarPreference.MAX_VALUE);
+		   _touchDistPref.forceSetValue(val);
+	   }else if(key.equals("brushstroke_preference"))
+	   {
+		   int val = (int) (sharedPreferences.getFloat(key, .5f) * SeekBarPreference.MAX_VALUE);
+		   _touchStrokePref.forceSetValue(val);
+	   }
+
+   }
+   
+ 
+   
+   @Override
+   protected void onStop ()
+   {
+	   _photoPreference.destroy();
+	  _themePreference.destroy();
+	   super.onStop();
+   }
+
+public boolean onPreferenceClick(Preference preference)
+{
+	// TODO Auto-generated method stub
+	if(!_expanded){
+	  getPreferenceScreen().addPreference(_advancedSettingsCategory);
+	_expanded =true;
+	}
+	else
+	{
+		 getPreferenceScreen().removePreference(_advancedSettingsCategory);
+		 _expanded = false;
+	}
+    
+	return false;
+}
+
+
+
+}
